@@ -6,8 +6,8 @@ import pandas as pd
 from dataclasses import dataclass
 from data_transformation import DataTransformation
 from data_transformation import DataTransformationConfig
-#from src.COMPONENTS.model_training import ModelTrainer
-#from src.COMPONENTS.model_training import ModelTrainerConfig
+from model_training import ModelTrainer
+from model_training import ModelTrainerConfig
 
 ###data class decorator are used only when you have only variables inside the class if there are other methods then simply use init method
 @dataclass
@@ -50,3 +50,6 @@ if __name__=="__main__":
     
     data_transformation=DataTransformation()
     train_arr,_=data_transformation.initiate_data_transformation(data)
+
+    model_trainer=ModelTrainer()
+    print(model_trainer.initiate_model_trainer(train_arr))
